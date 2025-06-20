@@ -18,7 +18,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/DvdSpijker/paho.mqtt.golang/packets"
+	"github.com/SimonMTS/paho.mqtt.golang/packets"
 )
 
 type UtMessageHandler struct {

@@ -19,7 +19,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/DvdSpijker/paho.mqtt.golang/packets"
+	"github.com/SimonMTS/paho.mqtt.golang/packets"
 )
 
 // route is a type which associates MQTT Topic strings with a

@@ -1,4 +1,4 @@
-module github.com/DvdSpijker/paho.mqtt.golang
+module github.com/SimonMTS/paho.mqtt.golang
 
 go 1.14
 
