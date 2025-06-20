@@ -1,6 +1,7 @@
 package mqtt
 
 import (
+	"context"
 	"crypto/tls"
 	"fmt"
 	"io"
@@ -18,6 +19,7 @@ type WebsocketOptions struct {
 	ReadBufferSize  int
 	WriteBufferSize int
 	Proxy           ProxyFunction
+	NetDialContext func(ctx context.Context, network, addr string) (net.Conn, error)
 }
 
 type ProxyFunction func(req *http.Request) (*url.URL, error)
@@ -43,6 +45,7 @@ func NewWebsocket(host string, tlsc *tls.Config, timeout time.Duration, requestH
 		Subprotocols:      []string{"mqtt"},
 		ReadBufferSize:    options.ReadBufferSize,
 		WriteBufferSize:   options.WriteBufferSize,
+		NetDialContext:    options.NetDialContext,
 	}
 
 	ws, resp, err := dialer.Dial(host, requestHeader)
